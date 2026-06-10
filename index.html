@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Grishna ❤️</title>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+overflow:hidden;
+background:linear-gradient(135deg,#ff7eb3,#ffd6ec,#ffffff);
+height:100vh;
+}
+
+.page{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+}
+
+.active{
+display:flex;
+}
+
+.card{
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+width:90%;
+max-width:800px;
+box-shadow:0 8px 30px rgba(0,0,0,.15);
+}
+
+h1,h2{
+color:#ff1493;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+color:#333;
+}
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#ff1493;
+color:white;
+cursor:pointer;
+font-size:16px;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.gallery{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.gallery img{
+width:150px;
+height:200px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.timeline{
+text-align:left;
+}
+
+.timeline div{
+margin:15px 0;
+padding:10px;
+background:white;
+border-radius:15px;
+}
+
+.heart{
+position:absolute;
+color:#ff1493;
+font-size:20px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-100px);
+opacity:1;
+}
+}
+
+#countdown{
+font-size:30px;
+font-weight:bold;
+color:#ff1493;
+}
+
+.typewriter{
+border-right:3px solid hotpink;
+white-space:normal;
+overflow:hidden;
+}
+
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+
+<div class="page active">
+
+<div class="card">
+
+<h1>❤️ Happy 16th Birthday Grishna ❤️</h1>
+
+<p>
+To my Princess, Petuu and Hippo Pottasium 🦛❤️
+</p>
+
+<button onclick="startBirthday()">Start Surprise 🎁</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>🎂 Countdown To Your Birthday</h2>
+
+<div id="countdown"></div>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>💌 A Letter For You</h2>
+
+<p id="typing"></p>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>📸 My Favourite Photos</h2>
+
+<div class="gallery">
+
+<img src="photo1.webp">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+
+</div>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>📖 Our Timeline</h2>
+
+<div class="timeline">
+
+<div>❤️ The day we met</div>
+
+<div>😊 The first time we laughed together</div>
+
+<div>🌹 The memories we created</div>
+
+<div>💖 Today — Your Sweet 16</div>
+
+</div>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>🌹 Bouquet For My Princess</h2>
+
+<div style="font-size:90px;">💐</div>
+
+<p>
+If I could, I'd bring you the biggest bouquet in the world.
+</p>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>🍫 Chocolates For Petuu</h2>
+
+<div style="font-size:90px;">🍫</div>
+
+<p>
+A sweet gift for the sweetest girl.
+</p>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>💖 Why You're Special</h2>
+
+<p>
+
+You are beautiful.
+
+You are kind.
+
+You make my days brighter.
+
+You make life happier.
+
+And I'm lucky to have you.
+
+</p>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 9 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>✨ My Promise</h2>
+
+<p>
+
+I may not always afford expensive gifts.
+
+I may not always have everything.
+
+But one thing I promise:
+
+I will always love you.
+
+Not only on your birthday.
+
+Every day.
+
+❤️
+
+</p>
+
+<button onclick="nextPage()">Next ❤️</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 10 -->
+
+<div class="page">
+
+<div class="card">
+
+<h2>🎁 Secret Surprise</h2>
+
+<p>
+
+Click below ❤️
+
+</p>
+
+<button onclick="alert('You are one of the best things that ever happened to me ❤️')">
+
+Open Surprise ❤️
+
+</button>
+
+<br>
+
+<button onclick="nextPage()">Final Page 🎆</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 11 -->
+
+<div class="page">
+
+<div class="card">
+
+<h1>🎂 HAPPY SWEET 16 GRISHNA ❤️</h1>
+
+<p>
+
+Thank you for being born.
+
+Thank you for becoming my world.
+
+16 years ago the world received an angel.
+
+And one day that angel became my happiness.
+
+I know I cannot always buy the biggest gifts.
+
+But I promise to give you something better:
+
+My love.
+
+Every day.
+
+No matter what.
+
+Happy Birthday Princess ❤️
+
+Love,
+
+Riyan ❤️
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+let current=0;
+const pages=document.querySelectorAll(".page");
+
+function nextPage(){
+
+pages[current].classList.remove("active");
+current++;
+
+if(current<pages.length){
+pages[current].classList.add("active");
+}
+
+if(current===pages.length-1){
+
+confetti({
+particleCount:400,
+spread:180
+});
+
+setInterval(()=>{
+confetti({
+particleCount:80,
+spread:120,
+origin:{x:Math.random(),y:Math.random()}
+});
+},1500);
+
+}
+
+}
+
+function startBirthday(){
+
+document.getElementById("music").play();
+
+nextPage();
+
+}
+
+const birthday=new Date("2026-06-12T00:00:00");
+
+setInterval(()=>{
+
+const now=new Date();
+
+const diff=birthday-now;
+
+const d=Math.floor(diff/(1000*60*60*24));
+
+const h=Math.floor(diff/(1000*60*60)%24);
+
+const m=Math.floor(diff/(1000*60)%60);
+
+const s=Math.floor(diff/1000%60);
+
+const el=document.getElementById("countdown");
+
+if(el){
+el.innerHTML=`${d}d ${h}h ${m}m ${s}s`;
+}
+
+},1000);
+
+const text=`Dear Grishna,
+
+Happy Sweet 16 ❤️
+
+I still can't believe how lucky I am to have you in my life.
+
+The day you were born was one of the luckiest days ever because it eventually gave me you.
+
+You are my Princess, my Petuu and my Hippo Pottasium ❤️`;
+
+let i=0;
+
+function type(){
+
+const el=document.getElementById("typing");
+
+if(el && i<text.length){
+
+el.innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(type,40);
+
+}
+
+}
+
+setTimeout(type,2500);
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),8000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
